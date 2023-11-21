@@ -1,0 +1,156 @@
+[
+  {
+    "city": "臺北市",
+    "candidate_1": "70,769",
+    "candidate_2": "685,830",
+    "candidate_3": "875,854",
+    "district": []
+  },
+  {
+    "city": "新北市",
+    "candidate_1": "112,620",
+    "candidate_2": "959,631",
+    "candidate_3": "1,393,936",
+    "district": []
+  },
+  {
+    "city": "桃園市",
+    "candidate_1": "63,132",
+    "candidate_2": "529,749",
+    "candidate_3": "718,260",
+    "district": []
+  },
+  {
+    "city": "臺中市",
+    "candidate_1": "84,800",
+    "candidate_2": "646,366",
+    "candidate_3": "967,304",
+    "district": []
+  },
+  {
+    "city": "臺南市",
+    "candidate_1": "41,075",
+    "candidate_2": "339,702",
+    "candidate_3": "786,471",
+    "district": []
+  },
+  {
+    "city": "高雄市",
+    "candidate_1": "55,309",
+    "candidate_2": "610,896",
+    "candidate_3": "1,097,621",
+    "district": []
+  },
+  {
+    "city": "新竹縣",
+    "candidate_1": "18,435",
+    "candidate_2": "154,224",
+    "candidate_3": "152,380",
+    "district": []
+  },
+  {
+    "city": "苗栗縣",
+    "candidate_1": "15,222",
+    "candidate_2": "164,345",
+    "candidate_3": "147,034",
+    "district": []
+  },
+  {
+    "city": "彰化縣",
+    "candidate_1": "35,060",
+    "candidate_2": "291,835",
+    "candidate_3": "436,336",
+    "district": []
+  },
+  {
+    "city": "南投縣",
+    "candidate_1": "13,315",
+    "candidate_2": "133,791",
+    "candidate_3": "152,046",
+    "district": []
+  },
+  {
+    "city": "雲林縣",
+    "candidate_1": "15,331",
+    "candidate_2": "138,341",
+    "candidate_3": "246,116",
+    "district": []
+  },
+  {
+    "city": "嘉義縣",
+    "candidate_1": "11,138",
+    "candidate_2": "98,810",
+    "candidate_3": "197,342",
+    "district": []
+  },
+  {
+    "city": "屏東縣",
+    "candidate_1": "14,021",
+    "candidate_2": "179,353",
+    "candidate_3": "317,676",
+    "district": []
+  },
+  {
+    "city": "宜蘭縣",
+    "candidate_1": "10,739",
+    "candidate_2": "90,010",
+    "candidate_3": "173,657",
+    "district": []
+  },
+  {
+    "city": "花蓮縣",
+    "candidate_1": "6,869",
+    "candidate_2": "111,834",
+    "candidate_3": "66,509",
+    "district": []
+  },
+  {
+    "city": "臺東縣",
+    "candidate_1": "4,163",
+    "candidate_2": "67,413",
+    "candidate_3": "44,092",
+    "district": []
+  },
+  {
+    "city": "澎湖縣",
+    "candidate_1": "2,583",
+    "candidate_2": "20,911",
+    "candidate_3": "27,410",
+    "district": []
+  },
+  {
+    "city": "基隆市",
+    "candidate_1": "11,878",
+    "candidate_2": "99,360",
+    "candidate_3": "114,966",
+    "district": []
+  },
+  {
+    "city": "新竹市",
+    "candidate_1": "14,103",
+    "candidate_2": "102,725",
+    "candidate_3": "144,274",
+    "district": []
+  },
+  {
+    "city": "嘉義市",
+    "candidate_1": "6,204",
+    "candidate_2": "56,269",
+    "candidate_3": "99,265",
+    "district": []
+  },
+  {
+    "city": "金門縣",
+    "candidate_1": "1,636",
+    "candidate_2": "35,948",
+    "candidate_3": "10,456",
+    "district": []
+  },
+  {
+    "city": "連江縣",
+    "candidate_1": "188",
+    "candidate_2": "4,776",
+    "candidate_3": "1,226",
+    "district": []
+  }
+]
