@@ -1,7 +1,8 @@
 .vote-view-wrap {
-  //   width: 100%;
+  width: 100%;
   //   display: flex;
   background: linear-gradient(90deg, #2b5876 0%, #4e4376 100%);
+  overflow: hidden;
 }
 .map-wrap {
   width: 30%;

@@ -21,8 +21,6 @@ export default function Filter() {
           return v.districts_name === selOption?.district;
         })
       : [];
-  //   console.log(districtArray);
-  //   console.log(villageArray);
   const cityDom = (
     <select
       name="city"

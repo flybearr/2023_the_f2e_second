@@ -1,0 +1,43 @@
+.barChart-wrap {
+  width: 85%;
+  margin: 0 auto;
+  overflow-x: auto; // 啟用X軸滾動條
+  z-index: 10;
+  &::-webkit-scrollbar {
+    height: 12px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #4e4376;
+    border-radius: 15px;
+    // background-image: url("/images/scroll.png");
+    // background-repeat: no-repeat;
+    // background-size: fill;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #ccc;
+    border-radius: 15px;
+  }
+}
+
+.chart-wrap {
+  svg {
+    height: 350px;
+  }
+}
+
+// .bar-chart-big-wrap {
+//   width: 100%;
+//   position: relative;
+// }
+
+// .empty-scroll-bar {
+//   width: 85%;
+//   height: 12px;
+//   margin: 0 auto;
+//   border-radius: 15px;
+//   background-color: #ccc;
+//   //   transform: translateY(-27.5px);
+//   position: absolute;
+//   bottom: 0;
+//   z-index: 5;
+// }
