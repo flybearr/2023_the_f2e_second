@@ -1,0 +1,46 @@
+.filter-wrap {
+  margin: 1rem 0;
+  padding: 0 1rem;
+}
+
+.selector-wrap {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  select {
+    width: 33.333%;
+    border: 1px #ffffff solid;
+    border-radius: 5px;
+    background-color: transparent;
+    text-align: center;
+    color: #fff;
+    option {
+      color: black;
+    }
+  }
+}
+.search-bar {
+  width: 100%;
+  margin-bottom: 1rem;
+  border: 1px #fff solid;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  input {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0.5rem 0 0.5rem 0.5rem;
+    color: #fff;
+
+    &::placeholder {
+      color: #fff; /* 设置你想要的颜色值 */
+    }
+  }
+
+  .material-symbols-outlined {
+    color: #fff;
+  }
+}
