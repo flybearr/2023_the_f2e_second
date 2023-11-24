@@ -15,6 +15,8 @@
     background-color: transparent;
     text-align: center;
     color: #fff;
+    padding: 0.3rem 0;
+    font-size: 1.2rem;
     option {
       color: black;
     }
@@ -34,7 +36,7 @@
     outline: none;
     padding: 0.5rem 0 0.5rem 0.5rem;
     color: #fff;
-
+    font-size: 1.2rem;
     &::placeholder {
       color: #fff; /* 设置你想要的颜色值 */
     }
@@ -42,5 +44,12 @@
 
   .material-symbols-outlined {
     color: #fff;
+  }
+}
+
+@media (min-width: 768px) {
+  .filter-wrap {
+    display: flex;
+    gap: 1rem;
   }
 }

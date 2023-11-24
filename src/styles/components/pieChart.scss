@@ -21,3 +21,9 @@
     gap: 1rem;
   }
 }
+
+@media (min-width: 768px) {
+  .pieChart-wrap {
+    width: 50%;
+  }
+}

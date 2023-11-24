@@ -21,5 +21,12 @@ export default function voteReducder(state, action) {
         ...state,
         total: action.payload,
       };
+    // case "keepArea": {
+    //   const { district, village } = action.payload;
+    //   return {
+    //     ...state,
+    //     findAreaArray: { districtArray: district, villageArray: village },
+    //   };
+    // }
   }
 }

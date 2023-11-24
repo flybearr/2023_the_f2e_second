@@ -1,6 +1,7 @@
 .barChart-wrap {
   width: 85%;
-  margin: 0 auto;
+
+  margin: 2rem auto;
   overflow-x: auto; // 啟用X軸滾動條
   z-index: 10;
   &::-webkit-scrollbar {
@@ -16,6 +17,11 @@
   &::-webkit-scrollbar-track {
     background-color: #ccc;
     border-radius: 15px;
+  }
+  h1 {
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
   }
 }
 

@@ -1,0 +1,21 @@
+.to-top-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #fff;
+  position: fixed;
+  z-index: 100;
+  right: 1rem;
+  bottom: 1rem;
+  display: grid;
+  place-items: center;
+  &:active {
+    background-color: lightcoral;
+  }
+}
+
+@media (min-width: 768px) {
+  .to-top-btn {
+    display: none;
+  }
+}

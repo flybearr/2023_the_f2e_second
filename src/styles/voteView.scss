@@ -1,14 +1,30 @@
 .vote-view-wrap {
   width: 100%;
+  margin: 0 auto;
+  // padding: 0 1rem;
   //   display: flex;
   background: linear-gradient(90deg, #2b5876 0%, #4e4376 100%);
   overflow: hidden;
 }
-.map-wrap {
-  width: 30%;
-  background-color: transparent;
+.vote-view-inside-wrap {
+  padding: 0 3rem;
 }
+.desktop-section1 {
+  // display: flex;
+  .section1-topArea {
+  }
+  .section1-bottomArea {
+    display: flex;
+    .section1-chart-wrap {
+      width: 70%;
+    }
+    .map-wrap {
+      width: 30%;
+      background-color: transparent;
+    }
+  }
 
-.chart-wrap {
-  width: 70%;
+  // .chart-wrap {
+  //   width: 70%;
+  // }
 }

@@ -1,0 +1,29 @@
+.tag-wrap {
+  margin: 1rem auto;
+  padding: 0 1rem;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.tag-inside-wrap {
+  width: 45%;
+  color: #fff;
+  .bar {
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+    p {
+      padding-left: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  }
+}
+.tag-img-wrap {
+  width: 45%;
+  img {
+    width: 100%;
+  }
+}

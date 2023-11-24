@@ -4,23 +4,46 @@ import Filter from "../components/filter";
 import ProgressBar from "../components/progressBar";
 import PieChart from "../components/pieChart";
 import BarChart from "../components/barChart";
+import ScrollTop from "../components/scrollTop";
+import Tag from "../components/tag";
 import "../styles/voteView.scss";
+import { useVoteContext } from "../context/voteContext";
 export default function VoteView() {
-  return (
-    <div className="vote-view-wrap">
-      <NavBar />
-      <Filter />
+  const { isMobile } = useVoteContext();
+  const display = isMobile ? (
+    <>
       <ProgressBar />
       <PieChart />
-      <div className="bar-chart-big-wrap">
-        <BarChart />
-        <div className="empty-scroll-bar"></div>
+      <Tag />
+      <BarChart />
+    </>
+  ) : (
+    <div className="desktop-section1">
+      <div className="section1-topArea">
+        <ProgressBar />
       </div>
-      <Filter />
-      <Filter />
-      {/* <div className="map-wrap">
-        <TaiwanMap />
-      </div> */}
+      <div className="section1-bottomArea">
+        <div className="section1-chart-wrap">
+          <PieChart />
+          <BarChart />
+        </div>
+        <div className="map-wrap">
+          <TaiwanMap />
+        </div>
+      </div>
+    </div>
+  );
+  return (
+    <div className="vote-view-wrap">
+      <ScrollTop />
+      <NavBar />
+      <div className="vote-view-inside-wrap">
+        <Filter />
+        {display}
+
+        <Filter />
+        <Filter />
+      </div>
       {/* <Filter /> */}
       {/* <Filter /> */}
       {/* <div className="chart-wrap"></div> */}

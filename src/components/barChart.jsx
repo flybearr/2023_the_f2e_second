@@ -1,34 +1,36 @@
-import { useCallback } from "react";
 import Chart from "react-apexcharts";
 import { useVoteContext } from "../context/voteContext";
 import "../styles/components/barChart.scss";
+import { useEffect, useState } from "react";
 export default function BarChart() {
-  const { voteData } = useVoteContext();
-  const renderData = voteData;
-  const barData = {
-    label: [],
-    chartData: [
-      { name: "星際和平黨", data: [], color: "#B4A073" },
-      { name: "未來前進黨", data: [], color: "#E756B8" },
-      { name: "新世代改革黨", data: [], color: "#08C0BE" },
-    ],
-    color: ["#B4A073", "#E756B8", "#08C0BE"],
-  };
-  renderData?.forEach((v) => {
-    barData.chartData[0].data.push(
-      parseInt(v?.candidate_1.replace(",", ""), 10)
-    );
-    barData.chartData[1].data.push(
-      parseInt(v?.candidate_2.replace(",", ""), 10)
-    );
-    barData.chartData[2].data.push(
-      parseInt(v?.candidate_3.replace(",", ""), 10)
-    );
-    barData.label.push(v.city_name);
-  });
-  console.log(barData);
+  const { renderBarData, selOption } = useVoteContext();
+  const barWidth = selOption.village ? 390 : 1300;
+  // console.log(renderBarData);
+  // const renderData = voteData;
+  // const barData = {
+  //   label: [],
+  //   chartData: [
+  //     { name: "星際和平黨", data: [], color: "#B4A073" },
+  //     { name: "未來前進黨", data: [], color: "#E756B8" },
+  //     { name: "新世代改革黨", data: [], color: "#08C0BE" },
+  //   ],
+  //   color: ["#B4A073", "#E756B8", "#08C0BE"],
+  // };
+  // renderData?.forEach((v) => {
+  //   barData.chartData[0].data.push(
+  //     parseInt(v?.candidate_1.replace(",", ""), 10)
+  //   );
+  //   barData.chartData[1].data.push(
+  //     parseInt(v?.candidate_2.replace(",", ""), 10)
+  //   );
+  //   barData.chartData[2].data.push(
+  //     parseInt(v?.candidate_3.replace(",", ""), 10)
+  //   );
+  //   barData.label.push(v.city_name);
+  // });
+  // console.log(barData);
   const state = {
-    series: [...barData.chartData],
+    series: [...renderBarData.chartData],
     options: {
       chart: {
         type: "bar",
@@ -37,7 +39,7 @@ export default function BarChart() {
           show: false, // 關閉圖表工具欄
         },
       },
-      colors: [...barData.color],
+      colors: [...renderBarData.color],
       plotOptions: {
         bar: {
           horizontal: false,
@@ -61,10 +63,11 @@ export default function BarChart() {
         show: false,
       },
       xaxis: {
-        categories: [...barData.label],
+        categories: [...renderBarData.label],
         labels: {
           style: {
             colors: "#FFFFFF",
+            fontSize: "16px",
           },
         },
         axisBorder: {
@@ -72,14 +75,34 @@ export default function BarChart() {
         },
       },
       yaxis: {
+        title: {
+          text: "萬",
+          rotate: 0,
+          style: {
+            fontSize: "20px",
+            fontWeight: "bold",
+            color: "#fff",
+          },
+        },
         labels: {
           style: {
             colors: "#FFFFFF",
+          },
+          formatter: function (value) {
+            return value / 10000;
           },
         },
         axisBorder: {
           show: true,
           color: "#FFFFFF",
+        },
+        axisTicks: {
+          show: true,
+          borderType: "solid",
+          color: "#fff",
+          width: 5,
+          offsetX: 5,
+          offsetY: 0,
         },
       },
       fill: {
@@ -88,7 +111,7 @@ export default function BarChart() {
       tooltip: {
         y: {
           formatter: function (val) {
-            return "$ " + val + " thousands";
+            return +val + "人投票";
           },
         },
       },
@@ -97,9 +120,10 @@ export default function BarChart() {
 
   return (
     <div className="barChart-wrap">
+      <h1>各縣市政黨得票數</h1>
       <div className="chart-wrap">
         <Chart
-          width={1300}
+          width={barWidth}
           height={350}
           options={state.options}
           series={state.series}
