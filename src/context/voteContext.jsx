@@ -8,7 +8,7 @@ import {
 import axios from "axios";
 import { useMediaQuery } from "react-responsive";
 import voteReducder from "../reducer";
-
+import { judeNum } from "../utils";
 const VoteContext = createContext({});
 export default VoteContext;
 
@@ -55,17 +55,17 @@ export const VoteContextProvider = function ({ children }) {
     const newVoteArray = [
       {
         name: "星際和平黨",
-        value: parseInt(v?.candidate_1.split(",").join(""), 10),
+        value: judeNum(v?.candidate_1),
         color: "#AD8427",
       },
       {
         name: "未來前進黨",
-        value: parseInt(v?.candidate_2.split(",").join(""), 10),
+        value: judeNum(v?.candidate_2),
         color: "#E756B8",
       },
       {
         name: "新世代改革黨",
-        value: parseInt(v?.candidate_3.split(",").join(""), 10),
+        value: judeNum(v?.candidate_3),
         color: "#08C0BE",
       },
     ].sort((a, b) => b.value - a.value);
@@ -123,15 +123,9 @@ export const VoteContextProvider = function ({ children }) {
       color: ["#B4A073", "#E756B8", "#08C0BE"],
     };
     newData?.forEach((v) => {
-      barData.chartData[0].data.push(
-        parseInt(v?.candidate_1.split(",").join(""), 10)
-      );
-      barData.chartData[1].data.push(
-        parseInt(v?.candidate_2.split(",").join(""), 10)
-      );
-      barData.chartData[2].data.push(
-        parseInt(v?.candidate_3.split(",").join(""), 10)
-      );
+      barData.chartData[0].data.push(judeNum(v?.candidate_1));
+      barData.chartData[1].data.push(judeNum(v?.candidate_2));
+      barData.chartData[2].data.push(judeNum(v?.candidate_3));
       barData.label.push(v[compareKey]);
     });
     console.log(barData);

@@ -1,7 +1,7 @@
 import { useVoteContext } from "../context/voteContext";
 import "../styles/components/tag.scss";
 export default function Tag() {
-  const { newTotalVote } = useVoteContext();
+  const { newTotalVote, isMobile } = useVoteContext();
   return (
     <div className="tag-wrap">
       <div className="tag-inside-wrap">
@@ -18,9 +18,13 @@ export default function Tag() {
           );
         })}
       </div>
-      <div className="tag-img-wrap">
-        <img src="/images/uranus2.png" alt="" />
-      </div>
+      {isMobile ? (
+        <div className="tag-img-wrap">
+          <img src="/images/uranus2.png" alt="" />
+        </div>
+      ) : (
+        <></>
+      )}
     </div>
   );
 }

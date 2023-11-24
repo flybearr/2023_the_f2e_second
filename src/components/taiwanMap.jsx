@@ -16,10 +16,10 @@ export default function TaiwanMap() {
     let geoGenerator;
 
     // 放大
-    const zoom = d3
-      .zoom()
-      .scaleExtent([1, 8]) // 設定最小及最大縮放倍率
-      .on("zoom", handleZoom);
+    // const zoom = d3
+    //   .zoom()
+    //   .scaleExtent([1, 8]) // 設定最小及最大縮放倍率
+    //   .on("zoom", handleZoom);
 
     d3.json(
       "https://raw.githubusercontent.com/codeforgermany/click_that_hood/master/public/data/taiwan.geojson"
@@ -58,6 +58,15 @@ export default function TaiwanMap() {
         .style("margin", "0px")
         .on("mouseover", handleMouseOver)
         .on("mouseout", function (d, i) {
+          d3.select(this)
+            .transition()
+            .duration(300)
+            .attr("fill", function (d) {
+              const colorObj = winnerArray.find(
+                (v, i) => v.city === d.properties.name_traditional_chinese
+              );
+              return colorObj ? colorObj?.color : "#ccc";
+            });
           d3.selectAll("text")
             .transition()
             .delay(function (d, i) {
@@ -66,12 +75,12 @@ export default function TaiwanMap() {
             .text("");
         });
     });
-    svgEle.call(zoom);
+    // svgEle.call(zoom);
 
-    function handleZoom(event) {
-      const { transform } = event;
-      svgEle.selectAll("path").attr("transform", transform);
-    }
+    // function handleZoom(event) {
+    //   const { transform } = event;
+    //   svgEle.selectAll("path").attr("transform", transform);
+    // }
 
     function handleMouseOver(e, d) {
       let centroid = geoGenerator.centroid(d);
@@ -81,12 +90,13 @@ export default function TaiwanMap() {
         .style("font-size", 20)
         .style("font-weight", "bold")
         .style("display", "inline")
-        .attr("transform", "translate(" + centroid + ")")
+        .attr("transform", `translate( ${centroid} )`)
         .style("fill", "black")
         .transition()
         .delay(function (d, i) {
           return 100;
         });
+      d3.select(this).transition().duration(300).attr("fill", "beige");
     }
   }, [winnerArray]);
 

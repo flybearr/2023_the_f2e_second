@@ -19,12 +19,18 @@ export default function VoteView() {
     </>
   ) : (
     <div className="desktop-section1">
+      <Tag />
       <div className="section1-topArea">
         <ProgressBar />
       </div>
       <div className="section1-bottomArea">
         <div className="section1-chart-wrap">
-          <PieChart />
+          <div className="section1-up-wrap">
+            <div className="section1-up-img-wrap">
+              <img src="/images/uranus1.png" alt="" />
+            </div>
+            <PieChart />
+          </div>
           <BarChart />
         </div>
         <div className="map-wrap">

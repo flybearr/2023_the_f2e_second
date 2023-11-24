@@ -1,7 +1,6 @@
 .tag-wrap {
   margin: 1rem auto;
   padding: 0 1rem;
-
   display: flex;
   justify-content: space-between;
 }
@@ -9,6 +8,11 @@
 .tag-inside-wrap {
   width: 45%;
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  // place-items: center;
   .bar {
     padding: 1rem 0;
     display: flex;
@@ -25,5 +29,19 @@
   width: 45%;
   img {
     width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .tag-wrap {
+    width: 500px;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(50%);
+  }
+  .tag-inside-wrap {
+    gap: 0.7rem;
   }
 }

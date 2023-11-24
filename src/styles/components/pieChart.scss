@@ -7,9 +7,17 @@
   transform: rotate(-90deg);
 }
 
+.pieChart-title {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+.pieChart-bottom-wrap {
+}
+
 .pieChart-text-wrap {
   margin-top: 1rem;
-  //   text-align: center;
   display: flex;
   justify-content: center;
   gap: 1rem;
@@ -24,6 +32,15 @@
 
 @media (min-width: 768px) {
   .pieChart-wrap {
-    width: 50%;
+    width: 70%;
+  }
+  .pieChart-bottom-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .pieChart-text-wrap {
+      min-width: 220px;
+      margin: 0;
+    }
   }
 }

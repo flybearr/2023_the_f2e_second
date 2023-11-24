@@ -6,17 +6,25 @@
   background: linear-gradient(90deg, #2b5876 0%, #4e4376 100%);
   overflow: hidden;
 }
-.vote-view-inside-wrap {
-  padding: 0 3rem;
-}
+
 .desktop-section1 {
   // display: flex;
   .section1-topArea {
   }
+}
+
+@media (min-width: 768px) {
+  .vote-view-inside-wrap {
+    padding: 0 3rem;
+  }
+
   .section1-bottomArea {
     display: flex;
     .section1-chart-wrap {
       width: 70%;
+      display: flex;
+      flex-direction: column;
+      gap: 7rem;
     }
     .map-wrap {
       width: 30%;
@@ -24,7 +32,28 @@
     }
   }
 
-  // .chart-wrap {
-  //   width: 70%;
-  // }
+  .section1-up-wrap {
+    width: 100%;
+    display: flex;
+    margin-top: 2rem;
+    .section1-up-img-wrap {
+      width: 30%;
+      display: grid;
+      place-items: center start;
+      position: relative;
+      img {
+        width: 200px;
+      }
+      &::before {
+        content: "WE LOVE TW";
+        display: block;
+        color: #ccc;
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        font-family: Noto Sans TC;
+        font-size: 32px;
+      }
+    }
+  }
 }

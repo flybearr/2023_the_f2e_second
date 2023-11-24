@@ -4,7 +4,11 @@ import "../styles/components/barChart.scss";
 import { useEffect, useState } from "react";
 export default function BarChart() {
   const { renderBarData, selOption } = useVoteContext();
-  const barWidth = selOption.village ? 390 : 1300;
+  const barWidth =
+    renderBarData?.label.length * 100 > 400
+      ? renderBarData?.label.length * 100
+      : 600;
+  console.log(barWidth);
   // console.log(renderBarData);
   // const renderData = voteData;
   // const barData = {
@@ -32,6 +36,18 @@ export default function BarChart() {
   const state = {
     series: [...renderBarData.chartData],
     options: {
+      subtitle: {
+        text: "萬",
+        align: "left",
+        offsetX: 8,
+        offsetY: 5,
+        style: {
+          fontSize: "16px",
+          fontWeight: "normal",
+          fontFamily: undefined,
+          color: "#fff",
+        },
+      },
       chart: {
         type: "bar",
         height: 100,
@@ -75,15 +91,6 @@ export default function BarChart() {
         },
       },
       yaxis: {
-        title: {
-          text: "萬",
-          rotate: 0,
-          style: {
-            fontSize: "20px",
-            fontWeight: "bold",
-            color: "#fff",
-          },
-        },
         labels: {
           style: {
             colors: "#FFFFFF",
