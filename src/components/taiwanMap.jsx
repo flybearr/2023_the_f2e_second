@@ -1,13 +1,40 @@
 import { useRef, useEffect } from "react";
 import * as d3 from "d3";
 import { select } from "d3";
+import { judeNum } from "../utils";
 import "../styles/components/taiwanMap.scss";
 import { useVoteContext } from "../context/voteContext";
 export default function TaiwanMap() {
   const { winnerArray } = useVoteContext();
+  // const winnerArray = voteData.map((v, i) => {
+  //   const newVoteArray = [
+  //     {
+  //       name: "星際和平黨",
+  //       value: judeNum(v?.candidate_1),
+  //       color: "#AD8427",
+  //     },
+  //     {
+  //       name: "未來前進黨",
+  //       value: judeNum(v?.candidate_2),
+  //       color: "#E756B8",
+  //     },
+  //     {
+  //       name: "新世代改革黨",
+  //       value: judeNum(v?.candidate_3),
+  //       color: "#08C0BE",
+  //     },
+  //   ].sort((a, b) => b.value - a.value);
 
+  //   return {
+  //     city: v.city_name,
+  //     value: newVoteArray[0].value,
+  //     winner: newVoteArray[0].name,
+  //     color: newVoteArray[0].color,
+  //   };
+  // });
   console.log(winnerArray);
   const svg = useRef(null);
+
   useEffect(() => {
     const svgEle = select(svg.current);
     const width = window.innerWidth * 0.25;
@@ -48,7 +75,7 @@ export default function TaiwanMap() {
         })
         .append("path")
         .attr("fill", function (d) {
-          const colorObj = winnerArray.find(
+          const colorObj = winnerArray?.find(
             (v, i) => v.city === d.properties.name_traditional_chinese
           );
           return colorObj ? colorObj?.color : "#ccc";
@@ -62,12 +89,13 @@ export default function TaiwanMap() {
             .transition()
             .duration(300)
             .attr("fill", function (d) {
-              const colorObj = winnerArray.find(
-                (v, i) => v.city === d.properties.name_traditional_chinese
+              const colorObj = winnerArray?.find(
+                (v, i) => v?.city === d.properties.name_traditional_chinese
               );
               return colorObj ? colorObj?.color : "#ccc";
             });
-          d3.selectAll("text")
+          svgEle
+            .selectAll("text")
             .transition()
             .delay(function (d, i) {
               return 100;

@@ -51,32 +51,34 @@ export const VoteContextProvider = function ({ children }) {
       },
     },
   ];
-  const winnerArray = reducer?.voteData?.map((v, i) => {
-    const newVoteArray = [
-      {
-        name: "星際和平黨",
-        value: judeNum(v?.candidate_1),
-        color: "#AD8427",
-      },
-      {
-        name: "未來前進黨",
-        value: judeNum(v?.candidate_2),
-        color: "#E756B8",
-      },
-      {
-        name: "新世代改革黨",
-        value: judeNum(v?.candidate_3),
-        color: "#08C0BE",
-      },
-    ].sort((a, b) => b.value - a.value);
+  const winnerArray = useMemo(() => {
+    return voteData.map((v, i) => {
+      const newVoteArray = [
+        {
+          name: "星際和平黨",
+          value: judeNum(v?.candidate_1),
+          color: "#AD8427",
+        },
+        {
+          name: "未來前進黨",
+          value: judeNum(v?.candidate_2),
+          color: "#E756B8",
+        },
+        {
+          name: "新世代改革黨",
+          value: judeNum(v?.candidate_3),
+          color: "#08C0BE",
+        },
+      ].sort((a, b) => b.value - a.value);
 
-    return {
-      city: v.city_name,
-      value: newVoteArray[0].value,
-      winner: newVoteArray[0].name,
-      color: newVoteArray[0].color,
-    };
-  });
+      return {
+        city: v.city_name,
+        value: newVoteArray[0].value,
+        winner: newVoteArray[0].name,
+        color: newVoteArray[0].color,
+      };
+    });
+  }, [voteData]);
 
   const districtObj = useMemo(() => {
     const district = voteData.find((v) => {
