@@ -4,7 +4,7 @@ import VoteView from "./pages/voteView";
 function App() {
   return (
     <VoteContextProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/2023_the_f2e_second">
         <Routes>
           <Route path="/" element={<VoteView />} />
         </Routes>
