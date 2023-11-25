@@ -20,7 +20,7 @@ export default function Tag() {
       </div>
       {isMobile ? (
         <div className="tag-img-wrap">
-          <img src="/images/uranus2.png" alt="" />
+          <img src="./images/uranus2.png" alt="" />
         </div>
       ) : (
         <></>

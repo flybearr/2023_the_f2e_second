@@ -5,7 +5,7 @@ export default function NavBar() {
   return (
     <div className="nav-bg">
       <div className="nav-img-wrap">
-        <img src="/images/vote.png" alt="" />
+        <img src="./images/vote.png" alt="" />
       </div>
       <div className="nav-date-wrap">
         <div className="year-wrap">

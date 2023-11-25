@@ -176,10 +176,10 @@ export const VoteContextProvider = function ({ children }) {
   useEffect(() => {
     const getData = async () => {
       try {
-        const res = await axios.get("/data/output.json");
+        const res = await axios.get("./data/output.json");
         const data = await res.data;
         dispatch({ type: "getVoteData", payload: data });
-        const res2 = await axios.get("/data/total.json");
+        const res2 = await axios.get("./data/total.json");
         const data2 = await res2.data;
         dispatch({ type: "getTotalVote", payload: data2 });
       } catch (error) {

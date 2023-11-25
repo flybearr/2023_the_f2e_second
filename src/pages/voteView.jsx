@@ -35,7 +35,7 @@ export default function VoteView() {
         <div className="section1-chart-wrap">
           <div className="section1-up-wrap">
             <div className="section1-up-img-wrap">
-              <img src="/images/uranus1.png" alt="" />
+              <img src="./images/uranus1.png" alt="" />
             </div>
             <PieChart />
           </div>
