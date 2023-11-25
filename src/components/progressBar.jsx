@@ -13,6 +13,10 @@ export default function ProgressBar() {
       <div className="bar-wrap">
         {sortData.map((v, i) => {
           const desktop_width = ["43%", "37%", "20%"][i];
+          let displayName = "";
+          if (v.name === "新世代改革黨") displayName = "新世代改革黨 / 蔡菜子";
+          if (v.name === "未來前進黨") displayName = "未來前進黨 / 喊國語";
+          if (v.name === "星際和平黨") displayName = "星際和平黨 / 宋你魚";
           return (
             <div
               style={
@@ -21,7 +25,7 @@ export default function ProgressBar() {
               className="bar"
               key={v.name}
             >
-              <p>{v.name}</p>
+              <p>{displayName}</p>
               <p> {v.value} </p>
             </div>
           );

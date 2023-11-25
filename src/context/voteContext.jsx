@@ -8,7 +8,7 @@ import {
 import axios from "axios";
 import { useMediaQuery } from "react-responsive";
 import voteReducder from "../reducer";
-import { judeNum } from "../utils";
+import { judeNum, randomPrecent } from "../utils";
 const VoteContext = createContext({});
 export default VoteContext;
 
@@ -116,20 +116,61 @@ export const VoteContextProvider = function ({ children }) {
     const barData = {
       label: [],
       chartData: [
-        { name: "星際和平黨", data: [], color: "#B4A073" },
-        { name: "未來前進黨", data: [], color: "#E756B8" },
-        { name: "新世代改革黨", data: [], color: "#08C0BE" },
+        {
+          name: "星際和平黨",
+          data: [],
+          color: "#B4A073",
+          year: "2020",
+          precent: [],
+        },
+        {
+          name: "未來前進黨",
+          data: [],
+          color: "#E756B8",
+          year: "2016",
+          precent: [],
+        },
+        {
+          name: "新世代改革黨",
+          data: [],
+          color: "#08C0BE",
+          year: "2012",
+          precent: [],
+        },
       ],
       color: ["#B4A073", "#E756B8", "#08C0BE"],
     };
+
+    const barData2 = {
+      label: [],
+      chartData2: [
+        {
+          name: "2012",
+          data: [],
+        },
+        {
+          name: "2016",
+          data: [],
+        },
+        {
+          name: "2020",
+          data: [],
+        },
+      ],
+      color: ["#65A5D0", "#85618B", "#9B8DCD"],
+    };
+
     newData?.forEach((v) => {
       barData.chartData[0].data.push(judeNum(v?.candidate_1));
       barData.chartData[1].data.push(judeNum(v?.candidate_2));
       barData.chartData[2].data.push(judeNum(v?.candidate_3));
+      barData2.chartData2[0].data.push(randomPrecent(0.75, 0.85));
+      barData2.chartData2[1].data.push(randomPrecent(0.75, 0.85));
+      barData2.chartData2[2].data.push(randomPrecent(0.75, 0.85));
       barData.label.push(v[compareKey]);
+      barData2.label.push(v[compareKey]);
     });
-    console.log(barData);
-    return barData;
+    return { barData, barData2 };
   }, [selOption, voteData]);
 
   useEffect(() => {

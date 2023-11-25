@@ -4,6 +4,7 @@ import Filter from "../components/filter";
 import ProgressBar from "../components/progressBar";
 import PieChart from "../components/pieChart";
 import BarChart from "../components/barChart";
+import BarChart2 from "../components/barChart2";
 import ScrollTop from "../components/scrollTop";
 import Tag from "../components/tag";
 import "../styles/voteView.scss";
@@ -15,7 +16,14 @@ export default function VoteView() {
       <ProgressBar />
       <PieChart />
       <Tag />
-      <BarChart />
+      <div className="barChart-wrap">
+        <h1 className="barChart-title"> 各縣市政黨得票數</h1>
+        <BarChart />
+      </div>
+      <div className="percent-barChart-wrap ">
+        <h1 className="barChart-title"> 各縣市歷屆投票率變化</h1>
+        <BarChart2 />
+      </div>
     </>
   ) : (
     <div className="desktop-section1">
@@ -31,11 +39,19 @@ export default function VoteView() {
             </div>
             <PieChart />
           </div>
-          <BarChart />
+
+          <div className="barChart-wrap">
+            <h1 className="barChart-title"> 各縣市政黨得票數</h1>
+            <BarChart />
+          </div>
         </div>
         <div className="map-wrap">
           <TaiwanMap />
         </div>
+      </div>
+      <div className="percent-barChart-wrap ">
+        <h1 className="barChart-title"> 各縣市歷屆投票率變化</h1>
+        <BarChart2 />
       </div>
     </div>
   );
@@ -46,13 +62,7 @@ export default function VoteView() {
       <div className="vote-view-inside-wrap">
         <Filter />
         {display}
-
-        <Filter />
-        <Filter />
       </div>
-      {/* <Filter /> */}
-      {/* <Filter /> */}
-      {/* <div className="chart-wrap"></div> */}
     </div>
   );
 }

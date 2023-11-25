@@ -6,7 +6,7 @@ export default function PieChart() {
     options: {
       dataLabels: {
         style: {
-          fontSize: "20px",
+          fontSize: "30px",
         },
       },
       colors: ["#4E4376", "#635692"],

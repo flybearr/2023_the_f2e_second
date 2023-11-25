@@ -17,7 +17,9 @@ export default function NavBar() {
         </div>
         <div className="line-wrap">
           <div className="line">
-            <div className="line-ball"></div>
+            <div className="line-ball">
+              <div className="now"></div>
+            </div>
             <div className="line-ball"></div>
             <div className="line-ball"></div>
           </div>

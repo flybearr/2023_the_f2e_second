@@ -1,52 +1,16 @@
 import Chart from "react-apexcharts";
 import { useVoteContext } from "../context/voteContext";
-import "../styles/components/barChart.scss";
-import { useEffect, useState } from "react";
-export default function BarChart() {
+// import "../styles/components/barChart2.scss";
+export default function BarChart2() {
   const { renderBarData, selOption } = useVoteContext();
-  const { barData } = renderBarData;
+  const { barData2 } = renderBarData;
   const barWidth =
-    barData?.label.length * 100 > 400 ? barData?.label.length * 100 : 600;
+    barData2?.label.length * 100 > 400 ? barData2?.label.length * 100 : 600;
   console.log(barWidth);
-  // console.log(barData);
-  // const renderData = voteData;
-  // const barData = {
-  //   label: [],
-  //   chartData: [
-  //     { name: "星際和平黨", data: [], color: "#B4A073" },
-  //     { name: "未來前進黨", data: [], color: "#E756B8" },
-  //     { name: "新世代改革黨", data: [], color: "#08C0BE" },
-  //   ],
-  //   color: ["#B4A073", "#E756B8", "#08C0BE"],
-  // };
-  // renderData?.forEach((v) => {
-  //   barData.chartData[0].data.push(
-  //     parseInt(v?.candidate_1.replace(",", ""), 10)
-  //   );
-  //   barData.chartData[1].data.push(
-  //     parseInt(v?.candidate_2.replace(",", ""), 10)
-  //   );
-  //   barData.chartData[2].data.push(
-  //     parseInt(v?.candidate_3.replace(",", ""), 10)
-  //   );
-  //   barData.label.push(v.city_name);
-  // });
-  // console.log(barData);
+
   const state = {
-    series: [...barData.chartData],
+    series: [...barData2.chartData2],
     options: {
-      subtitle: {
-        text: "萬",
-        align: "left",
-        offsetX: 8,
-        offsetY: 5,
-        style: {
-          fontSize: "16px",
-          fontWeight: "normal",
-          fontFamily: undefined,
-          color: "#fff",
-        },
-      },
       chart: {
         type: "bar",
         height: 100,
@@ -54,7 +18,7 @@ export default function BarChart() {
           show: false, // 關閉圖表工具欄
         },
       },
-      colors: [...barData.color],
+      colors: [...barData2.color],
       plotOptions: {
         bar: {
           horizontal: false,
@@ -78,7 +42,7 @@ export default function BarChart() {
         show: false,
       },
       xaxis: {
-        categories: [...barData.label],
+        categories: [...barData2.label],
         labels: {
           style: {
             colors: "#FFFFFF",
@@ -100,10 +64,11 @@ export default function BarChart() {
       yaxis: {
         labels: {
           style: {
+            fontSize: "16px",
             colors: "#FFFFFF",
           },
           formatter: function (value) {
-            return value / 10000;
+            return `${value}%`;
           },
         },
         axisBorder: {
@@ -125,7 +90,7 @@ export default function BarChart() {
       tooltip: {
         y: {
           formatter: function (val) {
-            return +val + "人投票";
+            return +val + "%";
           },
         },
       },
