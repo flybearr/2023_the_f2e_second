@@ -1,6 +1,6 @@
 {
   "name": "2023_the_f2e_second",
-  "homepage": "/2023_the_f2e_second",
+  "homepage": "https://flybearr.github.io/2023_the_f2e_second",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,7 +8,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "apexcharts": "^3.44.0",
