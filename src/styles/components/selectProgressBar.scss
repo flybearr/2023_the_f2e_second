@@ -1,0 +1,36 @@
+.select-progress-wrap {
+  margin: 1rem 0;
+  padding: 0 1rem;
+  width: 200px;
+}
+
+.select-bar-wrap {
+  width: 500px;
+  // display: flex;
+  // flex-direction: column;
+  .select-bar {
+    padding: 1rem;
+    text-align: center;
+    color: #fff;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    p {
+      color: #fff;
+      font-size: 1.2rem;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+// @media (min-width: 768px) {
+//   .bar-wrap {
+//     // display: flex;
+//     .bar {
+//       flex-direction: column;
+//       text-align: left;
+//     }
+//   }
+// }

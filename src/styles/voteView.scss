@@ -57,6 +57,12 @@
       width: 30%;
       background-color: transparent;
     }
+    //有選地區
+    .section1-chart-wrap-selected {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   .barChart-title {

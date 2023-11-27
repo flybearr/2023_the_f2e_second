@@ -4,8 +4,9 @@ import { select } from "d3";
 import { judeNum } from "../utils";
 import "../styles/components/taiwanMap.scss";
 import { useVoteContext } from "../context/voteContext";
+import { func } from "prop-types";
 export default function TaiwanMap() {
-  const { winnerArray } = useVoteContext();
+  const { winnerArray, selOption } = useVoteContext();
   // const winnerArray = voteData.map((v, i) => {
   //   const newVoteArray = [
   //     {
@@ -37,8 +38,8 @@ export default function TaiwanMap() {
 
   useEffect(() => {
     const svgEle = select(svg.current);
-    const width = window.innerWidth * 0.25;
-    const height = window.innerHeight * 0.9;
+    let width = window.innerWidth * 0.23;
+    let height = window.innerHeight * 0.9;
     let projection;
     let geoGenerator;
 
@@ -126,6 +127,15 @@ export default function TaiwanMap() {
         });
       d3.select(this).transition().duration(300).attr("fill", "beige");
     }
+    function resizeHandler() {
+      width = window.innerWidth * 0.25;
+      height = window.innerHeight * 0.9;
+      // svgEle.attr("width", width).attr("height", height);
+    }
+    window.addEventListener("resize", resizeHandler);
+    return () => {
+      window.removeEventListener("resize", resizeHandler);
+    };
   }, [winnerArray]);
 
   return <svg ref={svg}></svg>;
